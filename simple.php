@@ -10,8 +10,8 @@
     if(isset($_POST["text"])) {
         $text = $_POST["text"];
         $randomName = genRandomString();
-        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . dirname($_SERVER['PHP_SELF']);
         file_put_contents('n/' . $randomName, $text);
-        echo "$link" . "$randomName";
+        echo "$link" . "/n/" . "$randomName";
     }
 ?>
