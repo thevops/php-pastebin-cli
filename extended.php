@@ -32,9 +32,6 @@
             echo "Invalid syntax";
             die();
         }
-        echo $time . "\n";
-        echo $date . "\n";
-        echo $delete_date . "\n";
 
         $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . dirname($_SERVER['PHP_SELF']);
         echo "$link" . "/n/" . "$randomName" . "\n";
