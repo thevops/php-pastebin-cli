@@ -1,10 +1,4 @@
 <?php
-// use:
-// echo "some text" | curl -F 'text=<-' https://domain.com/logs/extended.php?d=X
-// or
-// echo "some text" | curl -F 'text=<-' https://domain.com/logs/extended.php?m=X
-
-
 
     function genRandomString( $length = 8 ) {
         $chars = "abcdefghijklmnopqrstuvwxyz0123456789";

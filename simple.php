@@ -1,5 +1,4 @@
 <?php
-// clear dir: find -type f ! -name index.php -exec rm {} \;
 
     function genRandomString( $length = 8 ) {
         $chars = "abcdefghijklmnopqrstuvwxyz0123456789";
