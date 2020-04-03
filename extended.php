@@ -18,15 +18,14 @@
         $randomName = genRandomString();
         file_put_contents('n/' . $randomName, $text);
 
-        $date = date('Y-m-d_H:i');
         if(isset($_GET['d'])) {
             $time = $_GET['d'];
-            $delete_date = date('Y-m-d_H:i', strtotime(' + ' . $time . ' days'));
+            $delete_date = date('Y-m-d H:i', strtotime(' + ' . $time . ' days'));
             file_put_contents('delete.txt', $randomName . ' ' . $delete_date . "\n", FILE_APPEND | LOCK_EX);
         } 
         elseif(isset($_GET['m'])) {
             $time = $_GET['m'];
-            $delete_date = date('Y-m-d_H:i', strtotime(' + ' . $time . ' minutes'));
+            $delete_date = date('Y-m-d H:i', strtotime(' + ' . $time . ' minutes'));
             file_put_contents('delete.txt', $randomName . ' ' . $delete_date . "\n", FILE_APPEND | LOCK_EX);
         } 
         else {
