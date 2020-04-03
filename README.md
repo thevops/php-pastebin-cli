@@ -20,8 +20,11 @@ Use:
 Second version has more functions - auto deleting file after specific time - in days or minutes.
 
 Method of use is similiar, except curl:
+
 `echo "some text" | curl -F 'text=<-' https://domain.com/logs/extended.php?d=XX` - for days limit
+
 or
+
 `echo "some text" | curl -F 'text=<-' https://domain.com/logs/extended.php?m=XX` - for minutes limit
 
 For automate delete notes add script to system cron.
