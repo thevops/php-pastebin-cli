@@ -22,19 +22,21 @@
         if(isset($_GET['d'])) {
             $time = $_GET['d'];
             $delete_date = date('Y-m-d_H:i', strtotime($date . ' + ' . $time . ' days'));
-            file_put_contents('delete.txt', $randomName . ' ' . $delete_date . '\n', FILE_APPEND | LOCK_EX);
+            file_put_contents('delete.txt', $randomName . ' ' . $delete_date . "\n", FILE_APPEND | LOCK_EX);
         } 
         elseif(isset($_GET['m'])) {
             $time = $_GET['m'];
             $delete_date = date('Y-m-d_H:i', strtotime($date . ' + ' . $time . ' minutes'));
-            file_put_contents('delete.txt', $randomName . ' ' . $delete_date . '\n', FILE_APPEND | LOCK_EX);
+            file_put_contents('delete.txt', $randomName . ' ' . $delete_date . "\n", FILE_APPEND | LOCK_EX);
         } 
         else {
             echo "Invalid syntax";
             die();
         }
+        echo $date;
+        echo $delete_date;
 
         $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . dirname($_SERVER['PHP_SELF']);
-        echo "$link" . "/n/" . "$randomName";
+        echo "$link" . "/n/" . "$randomName" . "\n";
     }
 ?>
