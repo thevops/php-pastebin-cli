@@ -7,7 +7,7 @@ cd $(dirname "$0")
 
 current_datetime="$(date +%s)"
 
-cat "$delete_file" | while read IFS= line
+cat "$delete_file" | while IFS= read line
 do
     file="$(echo $line | awk '{print $1}')"
     datetime="$(echo $line | awk '{print $2 $3}')"
